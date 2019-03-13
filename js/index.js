@@ -37,6 +37,14 @@ aTags.forEach(function(currentValue){
   });
 });
 
+
+
+
+TweenMax.from("h1", 0.5, {x:100, autoAlpha:0}); // autoAlpha handles both css properties visibility and opacity.
+TweenMax.from(".intro h2", 0.5, {x:-100, autoAlpha:0});//add tween 0.25 seconds before previous tween ends
+TweenMax.from("p", 0.5, {scale:0.5, autoAlpha:0}); // add feature label at start position of this tween
+TweenMax.from(".nav a", 0.5, {x:100, autoAlpha:0}, "feature+=0.25"); // add tween 0.25 seconds after the feature label
+
+TweenMax.staggerFrom("img", 0.5, {scale:0, rotation:-180, autoAlpha:0}, 0.2, "stagger"); 
 TweenMax.from(".logo-heading", 3, {x:200, ease:Bounce.easeOut, delay: 2});
-TweenMax.to(".img", 2, {rotation:360});
-//TweenLite.to("logo-heading", 2.5, { ease: RoughEase.ease.config({ template:  Power0.easeNone, strength: 1, points: 20, taper: "none", randomize:  true, clamp: false}), y: -500 });
+

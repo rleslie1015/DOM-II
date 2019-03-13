@@ -22,11 +22,21 @@ const buttonPush = document.querySelector(".btn");
 console.log(buttonPush);
 buttonPush.addEventListener("click", function(e){
     let newThing = document.createElement("p");
-    newThing.textContent = "lorem ipsum is great! We are all awesome!! look at this coder go! it's neat ipsum lorem.... ";
+    newThing.textContent = "lorem ipsum lorem ipsum sorem lipsum is great! We are all awesome!! look at this coder go! it's neat ipsum lorem lorem ipsum sorem lipsum .... ";
     document.body.appendChild(newThing);
     console.log("scroll down to see new p!")
 })
 
+const aTags = document.querySelectorAll('a');
 
-TweenMax.to(".logo-heading", 3, {x:600+300});
+aTags.forEach(function(currentValue){
+  
+  currentValue.addEventListener('click', function(e){
+    e.preventDefault();
+    e.target.style.color = "red";
+  });
+});
+
+TweenMax.from(".logo-heading", 3, {x:200, ease:Bounce.easeOut, delay: 2});
 TweenMax.to(".img", 2, {rotation:360});
+//TweenLite.to("logo-heading", 2.5, { ease: RoughEase.ease.config({ template:  Power0.easeNone, strength: 1, points: 20, taper: "none", randomize:  true, clamp: false}), y: -500 });
